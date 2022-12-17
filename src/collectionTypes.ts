@@ -81,3 +81,27 @@ enum Grades {
 
 console.log(Grades.U); // Prints '0' => enumrated!
 // We can like U = 1, then it will start counting from 1 => A will be 5
+
+// Type Aliases => We create type aliases for Typescript types
+type stringOrNumber = string | number;
+
+type stringOrNumberArray = (string | number)[];
+
+type aGuitarist = {
+  name?: string;
+  isActive: boolean;
+  albums: stringOrNumberArray; // Use of type aliase
+};
+
+type userId = stringOrNumber; // OK with types
+// interface PostId = stringOrNumber // won't work for interfaces
+// Think about 'interfaces' object or classes and 'type' as type alias or any type of TS.
+
+// Literal type => same as a variable declared with const
+let myName: 'Hafeez'; // A specific assignment or literal assignment
+// myName = 'Rehman' // won't work
+// But can be very useful with union type
+let userName: 'Hafeez' | 'Rehman' | 'Zuhair';
+userName = 'Rehman'; // Works for any of above name but not for anything else.
+
+// Note: both type aliase and literal assignment can help your code be DRY.
