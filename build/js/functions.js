@@ -69,3 +69,17 @@ const numberOrString = (value) => {
         return 'number';
     return createError('This should never happened');
 };
+// Custome type gaurd
+const isNumber = (value) => {
+    return typeof value === 'number' ? true : false;
+};
+// Use of the 'never' type
+const numberOrString1 = (value) => {
+    if (typeof value === 'string') {
+        return 'string';
+    }
+    if (isNumber(value)) {
+        return 'number';
+    }
+    return createError('This should never happened!');
+};
