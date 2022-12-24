@@ -50,7 +50,9 @@ const greeting = (guitarist: Guitarist) => {
 console.log(greeting(evh));
 
 // Interfaces in TS
+
 /* 'Iterface' in TS is almost same as 'type'.
+
  * Where to use 'interface' and where to 'type'?
  * Mostly the interface will be use for the classes
  * but it works also same as the type as follows
@@ -62,7 +64,7 @@ interface Guitarist_interface {
   albums: (string | number)[];
 }
 
-// Enumus
+// Enums
 /* Enums are one of the few features TypeScript has which is not
  * a type - level extension of JavaScript.
  * Enums allow a developer to define a set of named constants.
@@ -80,7 +82,7 @@ enum Grades {
 }
 
 console.log(Grades.U); // Prints '0' => enumrated!
-// We can like U = 1, then it will start counting from 1 => A will be 5
+// We can do like U = 1, then it will start counting from 1 => A will be 5
 
 // Type Aliases => We create type aliases for Typescript types
 type stringOrNumber = string | number;

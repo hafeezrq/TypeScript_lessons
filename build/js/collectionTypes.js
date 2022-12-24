@@ -28,7 +28,7 @@ const greeting = (guitarist) => {
     return `Hello, ${guitarist.name}`;
 };
 console.log(greeting(evh));
-// Enumus
+// Enums
 /* Enums are one of the few features TypeScript has which is not
  * a type - level extension of JavaScript.
  * Enums allow a developer to define a set of named constants.

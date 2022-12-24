@@ -32,6 +32,11 @@ let addAll = (a, b, c) => {
 let sumAll = (a, b, c = 2) => {
     return a + b;
 };
+sumAll(5, 5); // Good
+let sumAll1 = (a = 5, b, c) => {
+    return a + b + c;
+};
+// sumAll1(5, 5); // Not going to work
 // Note: default vlaue will not work with type alias and with 'function' keyword
 // Rest parameter
 const total1 = (...numbers) => {
