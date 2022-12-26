@@ -6,7 +6,7 @@ class Coder {
     public readonly name: string,
     public music: string,
     private age: number,
-    protected lang: string
+    protected lang: string = 'Typescript' // makes Optional
   ) {
     this.name = name;
     this.music = music;
@@ -19,3 +19,4 @@ class Coder {
 }
 
 const Zuhair = new Coder('Zuhair', 'Dufffff', 11, 'Typescript');
+const Shaarif = new Coder('Shaarif', 'None', 17); // It's fine not to include the optional prop.
