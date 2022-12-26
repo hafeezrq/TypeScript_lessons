@@ -28,3 +28,15 @@ class WebDev extends Coder {
 }
 const Sarah = new WebDev('Mac', 'Sarah', 'LiFi', 35);
 console.log(Sarah.getLang());
+// Implement the interface
+class Guitarist1 {
+    constructor(name, instrument) {
+        this.name = name;
+        this.instrument = instrument;
+    }
+    play(action) {
+        return `${this.name} ${action} ${this.instrument}`;
+    }
+}
+const Page = new Guitarist1('Page', 'guitar');
+console.log(Page.play('strums'));
