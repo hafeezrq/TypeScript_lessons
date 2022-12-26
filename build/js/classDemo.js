@@ -57,3 +57,24 @@ const John = new Peep('John');
 const Steve = new Peep('Steve');
 const Amy = new Peep('Amy');
 console.log(Peep.count); // Displays 3, as three instances created.
+// ========================================== //
+// Getters and Setters
+class Bands {
+    constructor() {
+        this.bandsData = [];
+    }
+    get data() {
+        return this.bandsData;
+    }
+    set data(values) {
+        if (Array.isArray(values) && values.every(el => typeof el === 'string')) {
+            this.bandsData = values;
+        }
+        else {
+            throw new Error('Params is not array of strings');
+        }
+    }
+}
+const myBands = new Bands();
+myBands.data = ['Neil Young', 'Led Zep']; // Use of setter methods in TS
+console.log(myBands.data); // Use of getter
