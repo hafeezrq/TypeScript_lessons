@@ -64,3 +64,28 @@ class Guitarist1 implements Musician {
 
 const Page = new Guitarist1('Page', 'guitar');
 console.log(Page.play('strums'));
+
+// ================================================ //
+
+// Use of static or class members.
+
+class Peep {
+  static count: number = 0;
+
+  static getCount(): number {
+    return Peep.count;
+  }
+
+  public id: number;
+
+  constructor(public name: string) {
+    this.name = name;
+    this.id = ++Peep.count;
+  }
+}
+
+const John = new Peep('John');
+const Steve = new Peep('Steve');
+const Amy = new Peep('Amy');
+
+console.log(Peep.count); // Displays 3, as three instances created.

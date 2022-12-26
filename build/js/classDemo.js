@@ -40,3 +40,20 @@ class Guitarist1 {
 }
 const Page = new Guitarist1('Page', 'guitar');
 console.log(Page.play('strums'));
+// ================================================ //
+// Use of static or class members
+class Peep {
+    static getCount() {
+        return Peep.count;
+    }
+    constructor(name) {
+        this.name = name;
+        this.name = name;
+        this.id = ++Peep.count;
+    }
+}
+Peep.count = 0;
+const John = new Peep('John');
+const Steve = new Peep('Steve');
+const Amy = new Peep('Amy');
+console.log(Peep.count); // Displays 3, as three instances created.
