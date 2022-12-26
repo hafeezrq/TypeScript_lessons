@@ -20,3 +20,22 @@ class Coder {
 
 const Zuhair = new Coder('Zuhair', 'Dufffff', 11, 'Typescript');
 const Shaarif = new Coder('Shaarif', 'None', 17); // It's fine not to include the optional prop.
+
+class WebDev extends Coder {
+  constructor(
+    public computer: string,
+    name: string,
+    music: string,
+    age: number
+  ) {
+    super('Hafeez', 'Classic', 55); // Must come first/before anyother initialisation.
+    this.computer = computer;
+  }
+
+  public getLang() {
+    return `I write code in ${this.lang}`;
+  }
+}
+
+const Sarah = new WebDev('Mac', 'Sarah', 'LiFi', 35);
+console.log(Sarah.getLang());
