@@ -41,7 +41,7 @@ class Guitarist1 {
 const Page = new Guitarist1('Page', 'guitar');
 console.log(Page.play('strums'));
 // ================================================ //
-// Use of static or class members
+// Use of static or class members.
 class Peep {
     static getCount() {
         return Peep.count;
