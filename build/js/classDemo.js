@@ -13,3 +13,4 @@ class Coder {
         this.lang = lang;
     }
 }
+const Zuhair = new Coder('Zuhair', 'Dufffff', 11, 'Typescript');
