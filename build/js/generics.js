@@ -37,3 +37,12 @@ console.log(isTrue([]));
 console.log(isTrue([1, 2, 3]));
 console.log(isTrue(NaN));
 console.log(isTrue(-0));
+const checkBoolValue = (arg) => {
+    if (Array.isArray(arg) && !arg.length) {
+        return { value: arg, is: false };
+    }
+    if (isObject(arg) && !Object.keys(arg).length) {
+        return { value: arg, is: false };
+    }
+    return { value: arg, is: !!arg };
+};
