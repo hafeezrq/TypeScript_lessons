@@ -1,8 +1,11 @@
 "use strict";
 // Generics: To define strict types for typesafe developer experience
 // Generics provide a placeholder, a type of variable
-// Example
-// Following function will eccept any type of parameter.
+// =================================================== //
+//                                                     //
+//        Functions with Generics                      //
+//                                                     //
+// =================================================== //
 const echo = (param) => param;
 // Dosn't have to be return type!
 const isObject = (arg) => {
@@ -108,3 +111,30 @@ const usersArray = [
 ];
 console.log(getUserProperty(usersArray, 'email'));
 console.log(getUserProperty(usersArray, 'username'));
+// =================================================== //
+//                                                     //
+//        Classes with Generics                        //
+//                                                     //
+// =================================================== //
+class stateObject {
+    constructor(data) {
+        this.data = data;
+        this.data = data;
+    }
+    get state() {
+        return this.data;
+    }
+    set state(value) {
+        this.data = value;
+    }
+}
+const store = new stateObject('John');
+console.log(store.state); // Use getter
+store.state = 'Dave';
+// store.state = 42; // Gives error because TS infered type(T) is string as we use 'John' in instantiation.
+// Alternate: We can do like as follows
+// const store = new stateObject<string>('Lily');
+const myStore = new stateObject([35]);
+console.log(myStore.state);
+myStore.state = ['Richard', 55, true];
+console.log(myStore.state);

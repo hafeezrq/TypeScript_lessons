@@ -1,8 +1,12 @@
 // Generics: To define strict types for typesafe developer experience
 // Generics provide a placeholder, a type of variable
 
-// Example
-// Following function will eccept any type of parameter.
+// =================================================== //
+//                                                     //
+//        Functions with Generics                      //
+//                                                     //
+// =================================================== //
+
 const echo = <T>(param: T): T => param;
 
 // Dosn't have to be return type!
@@ -42,8 +46,11 @@ console.log(isTrue([1, 2, 3]));
 console.log(isTrue(NaN));
 console.log(isTrue(-0));
 
-// ===================== //
-// Example:  interface with generic
+// =================================================== //
+//                                                     //
+//        Interfaces with Generics                     //
+//                                                     //
+// =================================================== //
 
 interface BoolCheck<T> {
   value: T;
@@ -135,3 +142,35 @@ const usersArray = [
 
 console.log(getUserProperty(usersArray, 'email'));
 console.log(getUserProperty(usersArray, 'username'));
+
+// =================================================== //
+//                                                     //
+//        Classes with Generics                        //
+//                                                     //
+// =================================================== //
+class stateObject<T> {
+  constructor(private data: T) {
+    this.data = data;
+  }
+
+  get state(): T {
+    return this.data;
+  }
+
+  set state(value: T) {
+    this.data = value;
+  }
+}
+
+const store = new stateObject('John');
+console.log(store.state); // Use getter
+store.state = 'Dave';
+// store.state = 42; // Gives error because TS infered type(T) is string as we use 'John' in instantiation.
+// Alternate: We can do like as follows
+// const store = new stateObject<string>('Lily');
+
+const myStore = new stateObject<(string | number | boolean)[]>([35]);
+console.log(myStore.state);
+
+myStore.state = ['Richard', 55, true];
+console.log(myStore.state);
