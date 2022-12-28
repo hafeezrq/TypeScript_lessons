@@ -46,3 +46,10 @@ const checkBoolValue = (arg) => {
     }
     return { value: arg, is: !!arg };
 };
+const processUser = (user) => {
+    // process user logic goes here
+    return user;
+};
+console.log(processUser({ id: 1, name: 'Dave' }));
+console.log(processUser({ id: 1 }));
+// console.log(processUser({ name: 'Dave' })); // Without id gives error.

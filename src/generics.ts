@@ -43,7 +43,7 @@ console.log(isTrue(NaN));
 console.log(isTrue(-0));
 
 // ===================== //
-// Example with interface
+// Example:  interface with generic
 
 interface BoolCheck<T> {
   value: T;
@@ -59,3 +59,18 @@ const checkBoolValue = <T>(arg: T): BoolCheck<T> => {
   }
   return { value: arg, is: !!arg };
 };
+
+// Narrowing Generic with keyword extends
+
+interface HasId {
+  id: number;
+}
+
+const processUser = <T extends HasId>(user: T): T => {
+  // process user logic goes here
+  return user;
+};
+
+console.log(processUser({ id: 1, name: 'Dave' }));
+console.log(processUser({ id: 1 }));
+// console.log(processUser({ name: 'Dave' })); // Without id gives error.
