@@ -115,3 +115,10 @@ const theAdjustedGrade: AdjustGrade = 'A';
 // 8: Extract<Type, Union>
 type HighGrades = Extract<LettersGrade, 'A' | 'B'>; // highGrades = 'A' | 'B'
 const theHighGrade: HighGrades = 'A';
+// ================================================ //
+
+// 9: NonNullable<Type>
+type AllPossibleGrades = 'Dave' | 'John' | null | undefined;
+type NamesOnly = NonNullable<AllPossibleGrades>;
+const oneName: NamesOnly = 'Dave'; // Now we can assign only 'Dave' or 'John' only.
+// ================================================= //

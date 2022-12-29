@@ -59,3 +59,5 @@ const priview = {
 };
 const theAdjustedGrade = 'A';
 const theHighGrade = 'A';
+const oneName = 'Dave'; // Now we can assign only 'Dave' or 'John' only.
+// ================================================= //
