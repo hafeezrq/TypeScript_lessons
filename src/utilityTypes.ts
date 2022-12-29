@@ -56,3 +56,31 @@ const verifiedAssignment: Readonly<Assignment> = {
 
 // verifiedAssignment.grade = 85; // Error: it wouldn't work as all properties read-only now.
 // ========================================= //
+
+// 4: Record<Keys, Type>
+
+const hexColorMap: Record<string, string> = {
+  red: 'FF0000',
+  green: '00FF00',
+  blue: '0000FF',
+};
+// Note: hexColorMap has the key names strings and values strings as well
+
+// Or we can use litrals as well, as follows
+type Students = 'Sarah' | 'Kelly';
+type LettersGrade = 'A' | 'B' | 'C' | 'D' | 'U';
+const finalRecord: Record<Students, LettersGrade> = {
+  Sarah: 'A',
+  Kelly: 'U',
+};
+
+// Or Using interfaces, like
+interface GradesAchieved {
+  assign1: number;
+  assign2: number;
+}
+
+const gradeData: Record<Students, GradesAchieved> = {
+  Sarah: { assign1: 95, assign2: 90 },
+  Kelly: { assign1: 25, assign2: 15 },
+};
