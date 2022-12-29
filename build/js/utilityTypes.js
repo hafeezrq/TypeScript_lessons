@@ -34,3 +34,17 @@ recordAssignment(Object.assign(Object.assign({}, assignment1), { verified: true 
 const verifiedAssignment = Object.assign(Object.assign({}, gradedAssignment), { verified: true });
 // verifiedAssignment.grade = 85; // Error: it wouldn't work as all properties read-only now.
 // ========================================= //
+// 4: Record<Keys, Type>
+const hexColorMap = {
+    red: 'FF0000',
+    green: '00FF00',
+    blue: '0000FF',
+};
+const finalRecord = {
+    Sarah: 'A',
+    Kelly: 'U',
+};
+const gradeData = {
+    Sarah: { assign1: 95, assign2: 90 },
+    Kelly: { assign1: 25, assign2: 15 },
+};
