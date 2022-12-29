@@ -86,11 +86,24 @@ const gradeData: Record<Students, GradesAchieved> = {
 };
 // ================================================== //
 
-// 5: Pick => we can pick some of all properties of an object
+// 5: Pick<Type, Keys> => we can pick some of all properties of an object
 
 // In the following example we pick two properties of Assignment, we created above
 type AssignResult = Pick<Assignment, 'studentId' | 'grade'>;
 const score: AssignResult = {
   studentId: 'K123',
   grade: 85,
+};
+
+// ================================================= //
+
+// 6: Omit<Type, Keys>
+
+// Constructs a type by picking all properties from Type and
+// then removing Keys(string literal or union of string literals).
+type AssignPreview = Omit<Assignment, 'grade' | 'verified'>;
+const priview: AssignPreview = {
+  studentId: 'K123',
+  title: 'Final Project',
+  // we omitted grade and verified.
 };

@@ -52,3 +52,8 @@ const score = {
     studentId: 'K123',
     grade: 85,
 };
+const priview = {
+    studentId: 'K123',
+    title: 'Final Project',
+    // we omitted grade and verified.
+};
