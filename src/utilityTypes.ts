@@ -94,7 +94,6 @@ const score: AssignResult = {
   studentId: 'K123',
   grade: 85,
 };
-
 // ================================================= //
 
 // 6: Omit<Type, Keys>
@@ -107,3 +106,12 @@ const priview: AssignPreview = {
   title: 'Final Project',
   // we omitted grade and verified.
 };
+// ================================================ //
+
+// 7: Exclude<UnionType, ExcludedMembers>
+type AdjustGrade = Exclude<LettersGrade, 'U'>; // => adjustGrade = 'A' | 'B' | 'C' | 'D'
+const theAdjustedGrade: AdjustGrade = 'A';
+
+// 8: Extract<Type, Union>
+type HighGrades = Extract<LettersGrade, 'A' | 'B'>; // highGrades = 'A' | 'B'
+const theHighGrade: HighGrades = 'A';

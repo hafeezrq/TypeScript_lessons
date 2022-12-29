@@ -57,3 +57,5 @@ const priview = {
     title: 'Final Project',
     // we omitted grade and verified.
 };
+const theAdjustedGrade = 'A';
+const theHighGrade = 'A';
