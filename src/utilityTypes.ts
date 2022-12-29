@@ -45,3 +45,14 @@ const recordAssignment = (assignment: Required<Assignment>): Assignment => {
 // recordAssignment(assignment1); // Error: as prop 'verified' is not there in assignment1.
 recordAssignment({ ...assignment1, verified: true }); // OK: as 'verified' is supplied.
 // ========================================= //
+
+// 3: Readonly<Type>
+
+// We can't overwrite properties either, and also eequired all properties otherwise won't work
+const verifiedAssignment: Readonly<Assignment> = {
+  ...gradedAssignment,
+  verified: true,
+};
+
+// verifiedAssignment.grade = 85; // Error: it wouldn't work as all properties read-only now.
+// ========================================= //
