@@ -84,3 +84,13 @@ const gradeData: Record<Students, GradesAchieved> = {
   Sarah: { assign1: 95, assign2: 90 },
   Kelly: { assign1: 25, assign2: 15 },
 };
+// ================================================== //
+
+// 5: Pick => we can pick some of all properties of an object
+
+// In the following example we pick two properties of Assignment, we created above
+type AssignResult = Pick<Assignment, 'studentId' | 'grade'>;
+const score: AssignResult = {
+  studentId: 'K123',
+  grade: 85,
+};
