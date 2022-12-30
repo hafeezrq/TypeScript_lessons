@@ -143,3 +143,15 @@ const createNewAssign = (title: string, points: number) => {
 };
 
 type NewAssign = ReturnType<typeof createNewAssign>;
+// and it wil be use as
+const tsAssignmenat: NewAssign = createNewAssign('Utility Type', 100);
+console.log(tsAssignmenat);
+// ======================================================== //
+
+// 11: Parameters<Type>
+// It is tuple
+type AssignParams = Parameters<typeof createNewAssign>;
+const AssignArgs: AssignParams = ['Generics', 100];
+const tsAssignmenat2: NewAssign = createNewAssign(...AssignArgs);
+console.log(tsAssignmenat2);
+// ======================================================= //

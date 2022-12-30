@@ -74,3 +74,10 @@ const createNewAssignmentV2 = (title, points) => {
 const createNewAssign = (title, points) => {
     return { title, points };
 };
+// and it wil be use as
+const tsAssignmenat = createNewAssign('Utility Type', 100);
+console.log(tsAssignmenat);
+const AssignArgs = ['Generics', 100];
+const tsAssignmenat2 = createNewAssign(...AssignArgs);
+console.log(tsAssignmenat2);
+// ======================================================= //
