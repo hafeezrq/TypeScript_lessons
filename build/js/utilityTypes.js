@@ -60,4 +60,17 @@ const priview = {
 const theAdjustedGrade = 'A';
 const theHighGrade = 'A';
 const oneName = 'Dave'; // Now we can assign only 'Dave' or 'John' only.
-// ================================================= //
+const createNewAssignment = (title, points) => {
+    return { title, points };
+};
+// Note: If we change the function like follow. It has no return type, may
+// be params and return type then we have to change the NewAssignment type as well
+const createNewAssignmentV2 = (title, points) => {
+    return { title, points };
+};
+// But if we declare retuen type after function then no change will be required after
+// any change in the function. In the following example NewAssign will be updated with
+// ay change in the createNewAssign function.
+const createNewAssign = (title, points) => {
+    return { title, points };
+};

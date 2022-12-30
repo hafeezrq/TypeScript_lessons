@@ -122,3 +122,24 @@ type AllPossibleGrades = 'Dave' | 'John' | null | undefined;
 type NamesOnly = NonNullable<AllPossibleGrades>;
 const oneName: NamesOnly = 'Dave'; // Now we can assign only 'Dave' or 'John' only.
 // ================================================= //
+
+// 10: ReturnType<Type>
+
+type NewAssignment = { title: string; points: number };
+const createNewAssignment = (title: string, points: number): NewAssignment => {
+  return { title, points };
+};
+// Note: If we change the function like follow. It has no return type, may
+// be params and return type then we have to change the NewAssignment type as well
+const createNewAssignmentV2 = (title: string, points: number) => {
+  return { title, points };
+};
+
+// But if we declare retuen type after function then no change will be required after
+// any change in the function. In the following example NewAssign will be updated with
+// ay change in the createNewAssign function.
+const createNewAssign = (title: string, points: number) => {
+  return { title, points };
+};
+
+type NewAssign = ReturnType<typeof createNewAssign>;
